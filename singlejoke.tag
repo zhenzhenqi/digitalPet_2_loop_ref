@@ -1,9 +1,8 @@
 <singlejoke>
   <p>{entry.value}</p>
-  <button type="button" onclick={parent.removeJoke }>Remove</button>
+  <button type="button" onclick={this.parent.removeJoke}>Remove</button>
 
   <script>
-    console.log("entry", entry);
+    //console.log("singlejoke", this.parent.removeJoke);
   </script>
-
 </singlejoke>

@@ -9,14 +9,16 @@
 		<button type="button" onclick={ addJoke }>Add</button>
 	</div>
 
-	<div class ="jokeContainer" each={entry in myJokes}>
-		<!-- <p>{value}</p>
-    <button type="button" onclick={ removeJoke }>Remove</button> -->
-		<singlejoke>
-		</singlejoke>
+	<div class ="jokeContainer" each={myJokes}>
+		<p>{value}</p>
+    <button type="button" onclick={ removeJoke }>Remove</button>
+		<!-- <singlejoke each={entry in myJokes}>
+		</singlejoke>  -->
   </div>
 
 	<script>
+		var that = this;
+
 		this.myJokes = [{
 			value: "¯\_(ツ)_/¯"
 		},{
@@ -43,15 +45,18 @@
 
 		this.removeJoke = function(event) {
 			// In RiotJS, event.item refers to the object of the child tag where the click event occurred.
-			console.log(event);
-			console.log(event.item);
+			//console.log(event);
+			//console.log("event.item", event.item.entry.value);
 
+			// var jokeObj = event.item.entry;
+			// var jokeObj = event.item.entry;
 			var jokeObj = event.item;
-
+			//console.log("jokeObject", jokeObj);
+			// var index = that.myJokes.indexOf(jokeObj);
 			var index = this.myJokes.indexOf(jokeObj);
-			console.log(index);
-
+			// console.log(index);
 			this.myJokes.splice(index, 1);
+			// this.update();
 		};
 
 		this.addJoke = function(event) {

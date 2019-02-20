@@ -11,7 +11,7 @@
 
   <script>
     //make a copy of my pet object and call it that
-    //var that  = this;
+    var that  = this;
 
     //initial state/propoerty
     this.hunger = 50;
@@ -39,6 +39,7 @@
 
 // functions that respond to events
     feed() {
+      console.log("this", this);
       this.decHunger();
       this.checkStatus();
     }
@@ -50,12 +51,15 @@
 
     //tell DOM window to increase hunger every three second
     //console.log(that);
-    <!-- window.setInterval(function(){
-      that.incHunger();
-      console.log("wait");
-      that.update();
-      that.checkStatus();
-    }, 3000); -->
+    // console.log("this object outside setInterval", this);
+
+    window.setInterval(function(){
+      // console.log("this object inside setInternval", this);
+      // that.incHunger();
+      // console.log("wait");
+      // that.update();
+      // that.checkStatus();
+    }, 3000);
   </script>
 
   <style>
