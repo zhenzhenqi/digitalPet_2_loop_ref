@@ -9,9 +9,11 @@
 		<button type="button" onclick={ addJoke }>Add</button>
 	</div>
 
-	<div class ="jokeContainer" each={myJokes}>
-		<p>{value}</p>
-    <button type="button" onclick={ removeJoke }>Remove</button>
+	<div class ="jokeContainer" each={entry in myJokes}>
+		<!-- <p>{value}</p>
+    <button type="button" onclick={ removeJoke }>Remove</button> -->
+		<singlejoke>
+		</singlejoke>
   </div>
 
 	<script>
